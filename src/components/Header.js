@@ -26,9 +26,17 @@ export default function Header() {
                 <li>
                   <Link to="/menu">Menu</Link>
                 </li>
-                <li>Reservations</li>
-                <li>About</li>
-                <li>Login</li>
+                <li>
+                  <Link to="/reservation">Reservation</Link>
+                </li>
+                <li>
+                  <Link to="?about" preventScrollReset={true}>
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/login">Login</Link>
+                </li>
               </Flex>
             </ul>
           </nav>

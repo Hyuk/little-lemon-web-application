@@ -1,17 +1,20 @@
-import { Box, Button, Flex, Text } from '@chakra-ui/react';
+import { Box, Flex, Text } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 
-export default function Hero() {
+export default function HeroBanner() {
   return (
-    <Box w="100%" h="250px" backgroundColor="#495E57">
+    <Box w="100%" h="300px" backgroundColor="#495E57">
       <Flex w="960px" mx="auto" justifyContent="space-between">
-        <Box className="hero-text" w="250px">
+        <Box h="300px" className="hero-text" w="400px">
           <h1>Little Lemon</h1>
           <h3>Chicago</h3>
-          <Text color="white">
+          <Text color="white" my="24px">
             We are a family owned Mediterranean restaurant, focused on
             traditional recipes served with a modern twist.
           </Text>
-          <Button>Reserve a Table</Button>
+          <Link to="/reservation" className="btn__cta">
+            Reserve a Table
+          </Link>
         </Box>
         <Box className="hero-image">
           <img

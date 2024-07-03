@@ -30,3 +30,13 @@ code {
 nav ul {
   list-style-type: none;
 }
+
+a.btn__cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4ce14;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 150px;
+}
