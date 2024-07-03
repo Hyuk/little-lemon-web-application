@@ -40,3 +40,7 @@ a.btn__cta {
   padding: 8px 16px;
   width: 150px;
 }
+
+img.img__hero {
+  border-radius: 16px;
+}

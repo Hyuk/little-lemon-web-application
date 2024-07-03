@@ -21,7 +21,7 @@ export default function Header() {
             <ul>
               <Flex gap="24px">
                 <li>
-                  <Link to="/home">Home</Link>
+                  <Link to="/">Home</Link>
                 </li>
                 <li>
                   <Link to="/menu">Menu</Link>
