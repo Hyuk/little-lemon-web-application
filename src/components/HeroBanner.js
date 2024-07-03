@@ -13,9 +13,11 @@ export default function HeroBanner() {
               We are a family owned Mediterranean restaurant, focused on
               traditional recipes served with a modern twist.
             </Text>
-            <Link to="/reservation" className="btn__cta">
-              Reserve a Table
-            </Link>
+            <Box w="150px">
+              <Link to="/reservation" className="btn__cta">
+                Reserve a Table
+              </Link>
+            </Box>
           </Box>
         </Flex>
         <Box className="hero-image" mt="40px">

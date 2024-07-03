@@ -17,6 +17,10 @@ h1 {
   font-size: 40px;
 }
 
+h2 {
+  font-size: 32px;
+}
+
 h3 {
   color: white;
   font-size: 24px;
@@ -38,7 +42,6 @@ a.btn__cta {
   background-color: #f4ce14;
   border-radius: 8px;
   padding: 8px 16px;
-  width: 150px;
 }
 
 img.img__hero {
