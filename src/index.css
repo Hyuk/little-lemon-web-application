@@ -12,6 +12,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+header {
+}
+
 .hero-text h1 {
   color: #c3a510;
   font-size: 40px;

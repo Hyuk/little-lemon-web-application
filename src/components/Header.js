@@ -4,25 +4,34 @@ import React, { useEffect } from 'react';
 
 export default function Header() {
   useEffect(() => {
-    const header = document.querySelector('header');
-    const nav = document.querySelector('nav');
-    const navLinks = document.querySelectorAll('nav a');
+    const scrollLinks = document.querySelectorAll('.smooth-scroll');
 
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 0) {
-        header.classList.add('scrolled');
-        nav.classList.add('scrolled');
-        navLinks.forEach((link) => {
-          link.classList.add('scrolled');
+    const handleClick = (event) => {
+      event.preventDefault();
+      const targetId = event.currentTarget.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        console.log(`Scrolling to ${targetId}`);
+        window.scrollTo({
+          top: targetElement.offsetTop - 100, // Adjust offset for fixed header
+          behavior: 'smooth',
         });
       } else {
-        header.classList.remove('scrolled');
-        nav.classList.remove('scrolled');
-        navLinks.forEach((link) => {
-          link.classList.remove('scrolled');
-        });
+        console.error(`Element with ID ${targetId} not found.`);
       }
-    });
+    };
+
+    for (const link of scrollLinks) {
+      link.addEventListener('click', handleClick);
+    }
+
+    // Clean up event listeners on unmount
+    return () => {
+      for (const link of scrollLinks) {
+        link.removeEventListener('click', handleClick);
+      }
+    };
   }, []);
   return (
     <header>
@@ -52,7 +61,11 @@ export default function Header() {
                   <Link to="/reservation">Reservation</Link>
                 </li>
                 <li>
-                  <Link to="#about" preventScrollReset={true}>
+                  <Link
+                    to="about"
+                    preventScrollReset={true}
+                    className="smooth-scroll"
+                  >
                     About
                   </Link>
                 </li>
