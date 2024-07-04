@@ -2,9 +2,9 @@ import { Box, Flex, Text, Image } from '@chakra-ui/react';
 
 export default function About() {
   return (
-    <Box id="about" maxW="980px" mx="auto">
-      <Flex>
-        <Box>
+    <Box id="about" maxW="980px" mx="auto" py="5em">
+      <Flex justifyContent="space-around">
+        <Box w="250px">
           <h2>Little Lemon</h2>
           <h3>Chicago</h3>
           <Text>
@@ -15,15 +15,15 @@ export default function About() {
             anim.
           </Text>
         </Box>
-        <Box position="relative">
+        <Box>
           <Image
-            width="200px"
+            width="250px"
             src="/images/restaurant.jpg"
             alt="Little Lemon Restaurant"
           />
           <Image
-            width="200px"
-            src="/images/restaurant.jpg"
+            width="250px"
+            src="/images/restaurant chef B.jpg"
             alt="Little Lemon Restaurant"
           />
         </Box>
