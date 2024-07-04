@@ -5,41 +5,41 @@ const testimonials = [
     name: 'Iron Man',
     rating: 5,
     review:
-      "I love the food here! It's always fresh and delicious. I highly recommend the chicken and waffles.",
+      'I thought I knew luxury, but Little Lemon Restaurant takes it to another level. The lemon-infused steak? Simply Stark-tacular. Jarvis, remind me to come back here.',
     image: 'https://via.placeholder.com/150',
   },
   {
     name: 'Hulk',
     rating: 4,
     review:
-      "I love the food here! It's always fresh and delicious. I highly recommend the chicken and waffles.",
+      "Even Hulk's rage can't resist the deliciousness of Little Lemon's veggie burger. It's Hulk-smashingly good! Banner approved.",
     image: 'https://via.placeholder.com/150',
   },
   {
     name: 'Thor',
     rating: 5,
     review:
-      "I love the food here! It's always fresh and delicious. I highly recommend the chicken and waffles.",
+      "By Odin's beard, the food here is divine! The lamb shank reminded me of a feast in Valhalla. Little Lemon Restaurant is worthy!",
     image: 'https://via.placeholder.com/150',
   },
   {
     name: 'Black Widow',
     rating: 4,
     review:
-      "I love the food here! It's always fresh and delicious. I highly recommend the chicken and waffles.",
+      "Stealthy service, killer cuisine. The sushi was so good, it should be classified. I'll be back for more covert ops dining at Little Lemon.",
     image: 'https://via.placeholder.com/150',
   },
 ];
 
 function TestimonialCard({ name, rating, review, image }) {
   return (
-    <Box>
+    <Flex flexDirection="column" gap="16px">
       <Flex justifyContent="center">
         {'★'.repeat(rating)}
         {'☆'.repeat(5 - rating)}
       </Flex>
       <Flex justifyContent="center">
-        <img src="https://via.placeholder.com/150" alt="Customer" />
+        <Box w="150px" h="150px" backgroundImage={image} borderRadius="50%" />
       </Flex>
       <Flex justifyContent="center">
         <p>Jane Doe</p>
@@ -51,21 +51,23 @@ function TestimonialCard({ name, rating, review, image }) {
           recommend the chicken and waffles."
         </p>
       </Flex>
-    </Box>
+    </Flex>
   );
 }
 
 export default function Testimonial() {
   return (
-    <Box maxW="960px" mx="auto">
-      <Box textAlign="center">
-        <h2>Testimonial</h2>
+    <Box w="100%" backgroundColor="#EEEEEE" p="5em">
+      <Box maxW="960px" mx="auto">
+        <Box textAlign="center">
+          <h2>Testimonial</h2>
+        </Box>
+        <Flex justifyContent="space-between" gap="24px">
+          {testimonials.map((testimonial, index) => (
+            <TestimonialCard key={index} {...testimonial} />
+          ))}
+        </Flex>
       </Box>
-      <Flex justifyContent="space-between" gap="16px">
-        {testimonials.map((testimonial, index) => (
-          <TestimonialCard key={index} {...testimonial} />
-        ))}
-      </Flex>
     </Box>
   );
 }
