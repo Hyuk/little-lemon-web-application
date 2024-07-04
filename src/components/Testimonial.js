@@ -6,50 +6,59 @@ const testimonials = [
     rating: 5,
     review:
       'I thought I knew luxury, but Little Lemon Restaurant takes it to another level. The lemon-infused steak? Simply Stark-tacular. Jarvis, remind me to come back here.',
-    image: 'https://via.placeholder.com/150',
+    image: 'iron-man.jpg',
   },
   {
     name: 'Hulk',
     rating: 4,
     review:
       "Even Hulk's rage can't resist the deliciousness of Little Lemon's veggie burger. It's Hulk-smashingly good! Banner approved.",
-    image: 'https://via.placeholder.com/150',
+    image: 'hulk.jpg',
   },
   {
     name: 'Thor',
     rating: 5,
     review:
       "By Odin's beard, the food here is divine! The lamb shank reminded me of a feast in Valhalla. Little Lemon Restaurant is worthy!",
-    image: 'https://via.placeholder.com/150',
+    image: 'thor.jpg',
   },
   {
     name: 'Black Widow',
     rating: 4,
     review:
       "Stealthy service, killer cuisine. The sushi was so good, it should be classified. I'll be back for more covert ops dining at Little Lemon.",
-    image: 'https://via.placeholder.com/150',
+    image: 'black-widow.jpg',
   },
 ];
 
 function TestimonialCard({ name, rating, review, image }) {
   return (
-    <Flex flexDirection="column" gap="16px">
+    <Flex
+      w="23%"
+      flexDirection="column"
+      backgroundColor="#FFFFFF"
+      borderRadius="8px"
+      p="16px"
+      gap="8px"
+    >
       <Flex justifyContent="center">
         {'★'.repeat(rating)}
         {'☆'.repeat(5 - rating)}
       </Flex>
       <Flex justifyContent="center">
-        <Box w="150px" h="150px" backgroundImage={image} borderRadius="50%" />
+        <Box
+          w="150px"
+          h="150px"
+          backgroundImage={`/images/${image}`}
+          borderRadius="50%"
+          backgroundSize={'cover'}
+        />
       </Flex>
       <Flex justifyContent="center">
-        <p>Jane Doe</p>
+        <p>{name}</p>
       </Flex>
-
-      <Flex justifyContent="center">
-        <p>
-          "I love the food here! It's always fresh and delicious. I highly
-          recommend the chicken and waffles."
-        </p>
+      <Flex justifyContent="center" p="8px">
+        <p>{review}</p>
       </Flex>
     </Flex>
   );
@@ -59,7 +68,7 @@ export default function Testimonial() {
   return (
     <Box w="100%" backgroundColor="#EEEEEE" p="5em">
       <Box maxW="960px" mx="auto">
-        <Box textAlign="center">
+        <Box textAlign="center" pb="3em">
           <h2>Testimonial</h2>
         </Box>
         <Flex justifyContent="space-between" gap="24px">
