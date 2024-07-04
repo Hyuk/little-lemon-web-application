@@ -12,9 +12,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1 {
+.hero-text h1 {
   color: #c3a510;
   font-size: 40px;
+}
+
+.hero-text h3 {
+  color: white;
+  font-size: 24px;
 }
 
 h2 {
@@ -22,8 +27,7 @@ h2 {
 }
 
 h3 {
-  color: white;
-  font-size: 24px;
+  color: black;
 }
 
 code {
@@ -46,4 +50,12 @@ a.btn__cta {
 
 img.img__hero {
   border-radius: 16px;
+}
+
+img.img__menu {
+  aspect-ratio: 1.6/1;
+}
+
+.card__menu h3 {
+  font-weight: 600;
 }

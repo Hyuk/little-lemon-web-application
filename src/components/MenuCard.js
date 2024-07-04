@@ -26,16 +26,30 @@ const specialMenu = [
 
 export default function MenuCard() {
   return (
-    <Flex justifyContent="space-between">
+    <Flex justifyContent="space-between" className="card__menu">
       {specialMenu.map((menu) => (
-        <Box w="30%">
-          <img src={menu.image_src} alt={menu.title} className="img__menu" />
-          <Flex justifyContent="space-between">
-            <h3>{menu.title}</h3>
-            <Text color="#EE9972">{menu.price}</Text>
-          </Flex>
-          <p>{menu.description}</p>
-        </Box>
+        <Flex
+          w="30%"
+          flexDirection="column"
+          gap="8px"
+          backgroundColor="#EDEFEE"
+        >
+          <Box
+            backgroundImage={menu.image_src}
+            w="100%"
+            h="160px"
+            backgroundSize="cover"
+            backgroundPosition="center"
+            backgroundRepeat="no-repeat"
+          ></Box>
+          <Box backgroundColor="#EDEFEE" p="16px">
+            <Flex justifyContent="space-between" my="8px" mb="16px">
+              <h3>{menu.title}</h3>
+              <Text color="#EE9972">{menu.price}</Text>
+            </Flex>
+            <p>{menu.description}</p>
+          </Box>
+        </Flex>
       ))}
     </Flex>
   );
