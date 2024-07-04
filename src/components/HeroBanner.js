@@ -4,9 +4,14 @@ import { Link } from 'react-router-dom';
 export default function HeroBanner() {
   return (
     <Box w="100%" h="300px" backgroundColor="#495E57">
-      <Flex w="960px" mx="auto" justifyContent="space-between">
+      <Flex
+        maxW="960px"
+        mx="auto"
+        justifyContent="space-around"
+        px={{ base: '1em', md: '0' }}
+      >
         <Flex alignItems="center">
-          <Box className="hero-text" w="400px" h="300px">
+          <Box className="hero-text" maxW="400px" h="300px">
             <h1>Little Lemon</h1>
             <h3>Chicago</h3>
             <Text color="white" my="24px">

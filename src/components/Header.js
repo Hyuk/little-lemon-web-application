@@ -1,8 +1,22 @@
-import { Box, Flex } from '@chakra-ui/react';
+import {
+  Box,
+  Flex,
+  IconButton,
+  useDisclosure,
+  Drawer,
+  DrawerBody,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+} from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import React, { useEffect } from 'react';
+import { HamburgerIcon } from '@chakra-ui/icons';
 
 export default function Header() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   useEffect(() => {
     const scrollLinks = document.querySelectorAll('.smooth-scroll');
 
@@ -41,13 +55,14 @@ export default function Header() {
         mx="auto"
         alignItems="center"
         justifyContent="space-between"
+        p={{ base: '0 1em', lg: '0' }}
       >
         <Box>
           <Link to="/">
             <img src="/images/logo.svg" alt="Little Lemon Restaurant" />
           </Link>
         </Box>
-        <Box display="flex" alignSelf="right">
+        <Box display={{ base: 'none', md: 'flex' }} alignSelf="right">
           <nav>
             <ul>
               <Flex gap="24px">
@@ -76,7 +91,57 @@ export default function Header() {
             </ul>
           </nav>
         </Box>
+        <IconButton
+          aria-label="Open Menu"
+          icon={<HamburgerIcon />}
+          display={{ base: 'flex', md: 'none' }}
+          onClick={onOpen}
+        />
       </Flex>
+      <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
+        <DrawerOverlay>
+          <DrawerContent>
+            <DrawerCloseButton />
+            <DrawerHeader>Menu</DrawerHeader>
+            <DrawerBody>
+              <nav>
+                <ul>
+                  <li>
+                    <Link to="/" onClick={onClose}>
+                      Home
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/menu" onClick={onClose}>
+                      Menu
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/reservation" onClick={onClose}>
+                      Reservation
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="about"
+                      onClick={onClose}
+                      preventScrollReset={true}
+                      className="smooth-scroll"
+                    >
+                      About
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/login" onClick={onClose}>
+                      Login
+                    </Link>
+                  </li>
+                </ul>
+              </nav>
+            </DrawerBody>
+          </DrawerContent>
+        </DrawerOverlay>
+      </Drawer>
     </header>
   );
 }

@@ -26,10 +26,17 @@ const specialMenu = [
 
 export default function MenuCard() {
   return (
-    <Flex justifyContent="space-between" className="card__menu">
+    <Flex
+      flexDirection={{ base: 'column', md: 'row' }}
+      justifyContent="space-between"
+      rowGap="2em"
+      mx={{ base: 'auto', lg: '0' }}
+      className="card__menu"
+    >
       {specialMenu.map((menu) => (
         <Flex
-          w="30%"
+          w={{ base: '100%', md: '30%' }}
+          maxW={{ base: '350px', md: '30%' }}
           flexDirection="column"
           gap="8px"
           backgroundColor="#EDEFEE"

@@ -3,7 +3,7 @@ import MenuCard from './MenuCard';
 
 export default function SpecialMenu() {
   return (
-    <Box maxW="960px" mx="auto">
+    <Box maxW="960px" mx="auto" px={{ base: '1em', lg: '0' }}>
       <Box my="5em">
         <Flex justifyContent="space-between">
           <h2>Specials</h2>

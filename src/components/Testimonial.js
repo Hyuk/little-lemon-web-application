@@ -52,6 +52,7 @@ function TestimonialCard({ name, rating, review, image }) {
           backgroundImage={`/images/${image}`}
           borderRadius="50%"
           backgroundSize={'cover'}
+          backgroundPosition={'center'}
         />
       </Flex>
       <Flex justifyContent="center">
