@@ -2,9 +2,14 @@ import { Box, Flex, Text, Image } from '@chakra-ui/react';
 
 export default function About() {
   return (
-    <Box id="about" maxW="980px" mx="auto" py="5em">
-      <Flex justifyContent="space-around">
-        <Box w="250px">
+    <Box id="about" maxW="980px" mx="auto" py="5em" px="1em">
+      <Flex justifyContent="space-around" gap="1em">
+        <Flex
+          flexDirection="column"
+          w="250px"
+          rowGap="8px"
+          className="about-text"
+        >
           <h2>Little Lemon</h2>
           <h3>Chicago</h3>
           <Text>
@@ -14,7 +19,7 @@ export default function About() {
             Ipsum et laborum est sit Lorem qui consectetur ipsum veniam laborum
             anim.
           </Text>
-        </Box>
+        </Flex>
         <Box>
           <Image
             width="250px"

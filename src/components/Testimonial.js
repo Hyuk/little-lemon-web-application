@@ -34,8 +34,9 @@ const testimonials = [
 function TestimonialCard({ name, rating, review, image }) {
   return (
     <Flex
-      w="23%"
+      maxW={{ base: '100%', md: '23%' }}
       flexDirection="column"
+      mx={{ base: 'auto', md: '0' }}
       backgroundColor="#FFFFFF"
       borderRadius="8px"
       p="16px"
@@ -72,7 +73,11 @@ export default function Testimonial() {
         <Box textAlign="center" pb="3em">
           <h2>Testimonial</h2>
         </Box>
-        <Flex justifyContent="space-between" gap="24px">
+        <Flex
+          flexDirection={{ base: 'column', md: 'row' }}
+          justifyContent="space-between"
+          gap="24px"
+        >
           {testimonials.map((testimonial, index) => (
             <TestimonialCard key={index} {...testimonial} />
           ))}
