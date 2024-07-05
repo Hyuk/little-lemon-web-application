@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Button, Select, FormControl, FormLabel } from '@chakra-ui/react';
+import { Button, Select, FormControl, FormLabel } from '@chakra-ui/react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { useNavigate } from 'react-router-dom';

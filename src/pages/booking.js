@@ -9,7 +9,7 @@ export default function Booking() {
   return (
     <>
       <Header />
-      <HeroPageTitle title="Reservation" />
+      <HeroPageTitle title="Reserve a Table" />
       <Box maxW="600px" mx="auto" my="5em">
         <BookingForm />
       </Box>

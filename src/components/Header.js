@@ -73,7 +73,7 @@ export default function Header() {
                   <Link to="/menu">Menu</Link>
                 </li>
                 <li>
-                  <Link to="/reservation">Reservation</Link>
+                  <Link to="/booking">Reservation</Link>
                 </li>
                 <li>
                   <Link
