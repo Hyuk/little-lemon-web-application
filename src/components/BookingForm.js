@@ -1,22 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button, Select, FormControl, FormLabel } from '@chakra-ui/react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { useNavigate } from 'react-router-dom';
 
-export default function BookingForm() {
-  const [date, setDate] = useState(new Date());
-  const [time, setTime] = useState('');
-  const [guests, setGuests] = useState(2);
+export default function BookingForm({
+  date,
+  setDate,
+  time,
+  setTime,
+  guests,
+  setGuests,
+  times,
+}) {
   const navigate = useNavigate();
-
-  const times = Array.from({ length: 24 }, (_, i) => {
-    const hour = 11 + Math.floor(i / 2);
-    const minutes = i % 2 === 0 ? '00' : '30';
-    const period = hour < 12 ? 'AM' : 'PM';
-    const displayHour = hour % 12 === 0 ? 12 : hour % 12;
-    return `${displayHour}:${minutes} ${period}`;
-  });
 
   const handleSubmit = (event) => {
     event.preventDefault();

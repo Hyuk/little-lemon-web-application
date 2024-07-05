@@ -23,10 +23,7 @@ const LoginSchema = Yup.object().shape({
     .required('Last Name is required'),
   email: Yup.string().email('Invalid email').required('Email is required'),
   password: Yup.string()
-    .matches(
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
-      'Password must contain at least 8 characters, one uppercase, one lowercase, one number and one special character'
-    )
+    .min(12, 'Password must be at least 12 characters')
     .required('Password is required'),
 });
 
