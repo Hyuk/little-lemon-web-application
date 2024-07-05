@@ -1,9 +1,10 @@
 import Router from './components/Router';
-
 import './App.css';
 
 function App() {
-  return <Router />;
+  return (
+      <Router />
+  );
 }
 
 export default App;
