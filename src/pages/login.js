@@ -35,7 +35,7 @@ export default function Login() {
 
   const handleSubmit = (values) => {
     localStorage.setItem('userInfo', JSON.stringify(values));
-    navigate('/reservation');
+    navigate('/booking');
   };
 
   return (
