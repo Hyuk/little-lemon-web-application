@@ -1,6 +1,7 @@
 import {
   Box,
   Flex,
+  Image,
   IconButton,
   useDisclosure,
   Drawer,
@@ -55,11 +56,10 @@ export default function Header() {
         mx="auto"
         alignItems="center"
         justifyContent="space-between"
-        p={{ base: '0 1em', lg: '0' }}
-      >
+        p={{ base: '0 1em', lg: '0' }}>
         <Box>
           <Link to="/">
-            <img src="/images/logo.svg" alt="Little Lemon Restaurant" />
+            <Image src="/images/logo.svg" alt="Little Lemon Restaurant" />
           </Link>
         </Box>
         <Box display={{ base: 'none', md: 'flex' }} alignSelf="right">
@@ -79,8 +79,7 @@ export default function Header() {
                   <Link
                     to="about"
                     preventScrollReset={true}
-                    className="smooth-scroll"
-                  >
+                    className="smooth-scroll">
                     About
                   </Link>
                 </li>
@@ -126,8 +125,7 @@ export default function Header() {
                       to="about"
                       onClick={onClose}
                       preventScrollReset={true}
-                      className="smooth-scroll"
-                    >
+                      className="smooth-scroll">
                       About
                     </Link>
                   </li>
