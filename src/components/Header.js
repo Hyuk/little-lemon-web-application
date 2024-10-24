@@ -59,7 +59,7 @@ export default function Header() {
         p={{ base: '0 1em', lg: '0' }}>
         <Box>
           <Link to="/">
-            <Image src="/images/logo.svg" alt="Little Lemon Restaurant 2" />
+            <Image src="/images/logo.svg" alt="Little Lemon Restaurant" />
           </Link>
         </Box>
         <Box display={{ base: 'none', md: 'flex' }} alignSelf="right">
